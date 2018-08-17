@@ -6,6 +6,7 @@ use Box\Managers\BoxResourceManager;
 use Box\Managers\BoxUsersManager;
 use Box\Managers\BoxFoldersManager;
 use Box\Managers\BoxFilesManager;
+use Box\Managers\BoxSearchManager;
 use Box\Config\BoxConstants;
 
 class BoxClient
@@ -41,6 +42,11 @@ class BoxClient
     public $foldersManager;
 
     /**
+     * @var \Box\Managers\BoxSearchManager
+     */
+    public $searchManager;
+
+    /**
      * @var \Box\Managers\BoxFilesManager
      */
     public $filesManager;
@@ -59,5 +65,6 @@ class BoxClient
         $this->usersManager    = new BoxUsersManager($this);
         $this->foldersManager  = new BoxFoldersManager($this);
         $this->filesManager    = new BoxFilesManager($this);
+        $this->searchManager    = new BoxSearchManager($this);
     }
 }
