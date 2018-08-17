@@ -37,8 +37,12 @@ class BoxSearchManager extends BoxResourceManager
      * @return \GuzzleHttp\Promise\PromiseInterface|\Psr\Http\Message\ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getSearchResults($params, $additionalHeaders = null, $runAsync = false)
+    public function getSearchResults($query, $params = null, $additionalHeaders = null, $runAsync = false)
     {
+        if ($params == null){
+            $params = array();
+        }
+        $params[BoxModelConstants::BOX_SEARCH_PARAMS_QUERY] = $query;
         $uri       = parent::createUri(BoxConstants::SEARCH_ENDPOINT_STRING, $params);
         $request   = parent::alterBaseBoxRequest($this->getBaseBoxRequest(), BoxConstants::GET, $uri, $additionalHeaders);
         return parent::requestTypeResolver($request, [], $runAsync);
