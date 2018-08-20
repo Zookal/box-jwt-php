@@ -40,6 +40,7 @@ abstract class BoxModelConstants
     const BOX_SEARCH_PARAMS_FILE_EXTENSIONS = "file_extensions";
     const BOX_SEARCH_PARAMS_ANCESTOR_FOLDER_IDS = "ancestor_folder_ids";
     const BOX_SEARCH_PARAMS_TYPE = "type";
+    const BOX_SEARCH_PARAMS_CONTENT_TYPES = "content_types";
     const BOX_SEARCH_PARAMS_FIELDS = "fields";
     const BOX_SEARCH_PARAMS_OFFSET = "offset";
     const BOX_SEARCH_PARAMS_LIMIT = "limit";
