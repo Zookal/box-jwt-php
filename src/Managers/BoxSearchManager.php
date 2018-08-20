@@ -30,14 +30,13 @@ class BoxSearchManager extends BoxResourceManager
      *
      * https://developer.box.com/#searching-for-content
      *
-     * @param string   $params            Array of params.
+     * @param string $query Query string to search
+     * @param string $params Array of params.
      * @param string[] $additionalHeaders Additional HTTP header key-value pairs.
-     * @param bool     $runAsync          Run asynchronously.
-     *
+     * @param bool $runAsync Run asynchronously.
      * @return \GuzzleHttp\Promise\PromiseInterface|\Psr\Http\Message\ResponseInterface
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getSearchResults($query, $params = null, $additionalHeaders = null, $runAsync = false)
+    public function getSearchResults(string $query, $params = null, $additionalHeaders = null, $runAsync = false)
     {
         if ($params == null){
             $params = array();
